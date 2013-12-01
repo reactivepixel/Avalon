@@ -11,7 +11,12 @@ module.exports = function (grunt) {
 		html2js: {
 			app: {
 				src: ["src/**/*.tpl.html"],
-				dest: "src/build/templates/app-tpl.js"
+				dest: "src/build/templates/templates.js",
+				options: {
+					rename: function (moduleName) {
+						return moduleName.replace("app/", "");
+					}
+				}
 			}
 		},
 		uglify: {
@@ -32,6 +37,10 @@ module.exports = function (grunt) {
 			angular: {
 				src: ["vendor/angular/angular.min.js"],
 				dest: "dist/vendor/angular.js"
+			},
+			angularFire: {
+				src: ["vendor/angular/angularfire.min.js"],
+				dest: "dist/vendor/angular-fire.js"
 			}
 		},
 		clean: ["dist/*", "src/build/*"]
