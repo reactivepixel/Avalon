@@ -13,6 +13,7 @@ module.exports = function (grunt) {
 				src: ["src/**/*.tpl.html"],
 				dest: "src/build/templates/templates.js",
 				options: {
+					module: "html-templates",
 					rename: function (moduleName) {
 						return moduleName.replace("app/", "");
 					}
@@ -41,6 +42,10 @@ module.exports = function (grunt) {
 			angularFire: {
 				src: ["vendor/angular/angularfire.min.js"],
 				dest: "dist/vendor/angular-fire.js"
+			},
+			angularRoute: {
+				src: ["vendor/angular/angular-route.min.js"],
+				dest: "dist/vendor/angular-route.js"
 			}
 		},
 		clean: ["dist/*", "src/build/*"]
