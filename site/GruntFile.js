@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-html2js");
 	
-	grunt.registerTask("build", ["clean", "html2js", "concat", "uglify"]);
+	grunt.registerTask("build", ["clean", "html2js", "concat"]);
 	
 	grunt.initConfig({
 		html2js: {
@@ -29,7 +29,8 @@ module.exports = function (grunt) {
 		concat: {
 			dist: {
 				src: ["src/**/*.js"],
-				dest: "src/build/avalon-app.js"
+//				dest: "src/build/avalon-app.js"
+				dest: "dist/avalon-app.js"
 			},
 			index: {
 				src: ["src/index.html"],
