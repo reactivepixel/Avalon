@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <title>Avalon</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="vendor/angular.js"></script>
-	<script src="avalon-app-min.js"></script>
-</head>
-<body>
-	<header></header>
-	<footer></footer>
 	
-	<script type="text/javascript">
-		console.log(angular);
-	</script>
+	<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+	<script src="vendor/angular.js"></script>
+	<script src="vendor/angular-route.js"></script>
+	<script src="vendor/angular-fire.js"></script>
+	<script src="avalon-app.js"></script>
+</head>
+<body ng-controller="NavigationCtrl">
+	
+	<header ng-include="'header.tpl.html'"></header>
+	<div ng-view></div>
+	<footer ng-include="'footer.tpl.html'"></footer>
+	
 </body>
 </html>
