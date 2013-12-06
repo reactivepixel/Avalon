@@ -29,7 +29,6 @@ module.exports = function (grunt) {
 		concat: {
 			dist: {
 				src: ["src/**/*.js"],
-//				dest: "src/build/avalon-app.js"
 				dest: "dist/avalon-app.js"
 			},
 			index: {
@@ -40,13 +39,13 @@ module.exports = function (grunt) {
 				src: ["vendor/angular/angular.min.js"],
 				dest: "dist/vendor/angular.js"
 			},
-			angularFire: {
-				src: ["vendor/angular/angularfire.min.js"],
-				dest: "dist/vendor/angular-fire.js"
-			},
 			angularRoute: {
 				src: ["vendor/angular/angular-route.min.js"],
 				dest: "dist/vendor/angular-route.js"
+			},
+			angularFire: {
+				src: ["vendor/angular/angularfire.min.js"],
+				dest: "dist/vendor/angular-fire.js"
 			}
 		},
 		clean: ["dist/*", "src/build/*"]
