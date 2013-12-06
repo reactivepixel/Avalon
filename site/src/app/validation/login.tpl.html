@@ -1,15 +1,18 @@
 <h2>Log with one of these services&#58;</h2>
 
 <ul>
-	<li><a href="#">Soundcloud</a></li>
 	<li><a href="#">Facebook</a></li>
 </ul>
 
-<form action="#" method="POST">
+<form name="logInForm" ng-controller="LogInCtrl">
 	<fieldset>
 		<legend>Type in your user info&#58;</legend>
-		<label for="username">Username</label><input type="text" name="username" id="username" placeholder="username or email" />
-		<label for="password">Password</label><input type="password" name="password" id="password" />
-		<button type="submit">Log In</button>
+		<label for="username">Username</label><input type="text" name="username" id="username" placeholder="username or email" ng-model="user.username" autofocus required />
+		<label for="password">Password</label><input type="password" name="password" id="password" required ng-model="user.password" />
 	</fieldset>
+	
+	<div>
+		<a href="index.html" title="Return to Home Page">cancel</a>
+		<button type="submit" ng-click="submit(user)">Log In</button>
+	</div>
 </form>
