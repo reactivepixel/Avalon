@@ -1,4 +1,4 @@
-<h1><a href="index.html">Avalon</a></h1>
+<h1><a href="">Avalon</a></h1>
 
 <form>
 	<input type="text" name="search" id="search" placeholder="Search" />
@@ -8,7 +8,8 @@
 <div>
 	<ul>
 		<li><a href="signup">Sign Up</a></li>
-		<li><a href="login">Log In</a></li>
+		<li ng-show="!isLoggedIn()"><a href="login">Log In</a></li>
+		<li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
 	</ul>
 </div>
 

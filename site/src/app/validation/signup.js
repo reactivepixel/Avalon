@@ -1,11 +1,4 @@
-function SignUpCtrl ($scope, $location, $rootScope, $firebase, $firebaseAuth, FBURL) {
-	
-	var url = FBURL;
-	
-	$rootScope.$on("$firebaseAuth:login", function(e, user) {
-	    console.log("User " + user.id + " successfully logged in!");
-		$location.path("home");
-	});
+function SignUpCtrl ($scope, $location, $rootScope, $firebase, $firebaseAuth) {
 	
 	$scope.submit = function (user) {
 		if ($scope.signUpForm.$valid) {
@@ -24,7 +17,6 @@ function SignUpCtrl ($scope, $location, $rootScope, $firebase, $firebaseAuth, FB
 						createProfile(user, newUser.id);
 					}
 				});
-//				resetPasswords();
 				return true;
 			}
 		} else {

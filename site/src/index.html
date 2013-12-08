@@ -6,7 +6,7 @@
 </head>
 <body ng-controller="NavigationCtrl">
 	
-	<header ng-include="'header.tpl.html'"></header>
+	<header ng-controller="HeaderCtrl" ng-include="'header.tpl.html'"></header>
 	<div ng-view></div>
 	<footer ng-include="'footer.tpl.html'"></footer>
 	
