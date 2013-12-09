@@ -7,8 +7,8 @@ var app = angular.module("app", [
 .config(function ($routeProvider, $locationProvider) {
 	$routeProvider
 	.when("/", {
-		templateUrl: "default.tpl.html",
-		controller: "NavigationCtrl"
+		templateUrl: "main/landing.tpl.html",
+		controller: "MainCtrl"
 	})
 	.when("/signup", {
 		templateUrl: "validation/signup.tpl.html"
@@ -20,7 +20,7 @@ var app = angular.module("app", [
 	$locationProvider.html5Mode(true);
 })
 
-.controller("NavigationCtrl", function ($scope, $route, $routeParams) {
+.controller("MainCtrl", function ($scope, $route, $routeParams) {
 	
 })
 

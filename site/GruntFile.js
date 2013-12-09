@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 				dest: "dist/avalon-app.js"
 			},
 			index: {
-				src: ["src/index.html"],
+				src: ["src/app/main/index.html"],
 				dest: "dist/index.html"
 			},
 			angular: {

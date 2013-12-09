@@ -4,11 +4,11 @@
     <title>Avalon</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
-<body ng-controller="NavigationCtrl">
+<body ng-controller="MainCtrl">
 	
-	<header ng-controller="HeaderCtrl" ng-include="'header.tpl.html'"></header>
+	<header ng-controller="HeaderCtrl" ng-include="'main/header.tpl.html'"></header>
 	<div ng-view></div>
-	<footer ng-include="'footer.tpl.html'"></footer>
+	<footer ng-include="'main/footer.tpl.html'"></footer>
 	
 	<script src='https://cdn.firebase.com/v0/firebase.js'></script>
 	<script src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
