@@ -1,20 +1,21 @@
-function HeaderCtrl ($scope, $rootScope, $location) {
+function HeaderCtrl ($scope, $rootScope, $location, $firebase, FBURL, User) {
+	
+	$rootScope.$on("$firebaseAuth:login", function(e, user) {
+		User.get();
+		$scope.data = User.data;
+	});
 	
 	$scope.logOut = function () {
 		if ($rootScope.auth) {
+			$scope.data.username = "";
+			$scope.data.isUser = false;
 			$rootScope.auth.$logout();
 			$location.path("/");
 		}
 	};
 	
-	$scope.isLoggedIn = function () {
-		if ($rootScope.auth) {
-			if ($rootScope.auth.user) {
-				return true;
-			}
-		} else {
-			return false;
-		}
-	}
-	
+	$scope.redirectHome = function () {
+		$location.path("/");	
+	};
+
 }
