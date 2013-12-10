@@ -1,10 +1,10 @@
-function LogInCtrl ($scope, $location, $rootScope, $firebase, $firebaseAuth, FBURL) {
+function LogInCtrl ($scope, $rootScope, $location, $firebase, $firebaseAuth, FBURL) {
 	
 	$scope.submit = function (user) {
 		if ($scope.logInForm.$valid) {
 			$rootScope.auth.$login("password", {
-				email: "test@gmail.com",
-				password: "testtest0"
+				email: user.username,
+				password: user.password
 			});
 		}
 		

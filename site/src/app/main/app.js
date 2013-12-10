@@ -1,7 +1,8 @@
 var app = angular.module("app", [
 	"html-templates",
 	"ngRoute",
-	"firebase"
+	"firebase",
+	"userData"
 ])
 
 .config(function ($routeProvider, $locationProvider) {
@@ -26,9 +27,7 @@ var app = angular.module("app", [
 
 .run(function (FBURL, $firebaseAuth, $rootScope, $location) {
 	$rootScope.auth = $firebaseAuth(new Firebase(FBURL));
-
 	$rootScope.$on("$firebaseAuth:login", function(e, user) {
-	    console.log("User " + user.id + " successfully logged in!");
 		$location.path("/");
 	});
 })
