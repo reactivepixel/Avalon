@@ -1,20 +1,16 @@
 angular.module("userData", [])
-	.factory("User", function (FBURL, Firebase) {
+	.factory("User", function (FBURL, Firebase, $rootScope) {
 		return {
-			data: {
-				username: "",
-				isUser: false
-			},
-			get: function () {
-				var id = "11",
-					url = FBURL + "users/" + id,
-					fb = new Firebase(url),
-					ref = this.data;
-				
+			getSingle: function (userId) {				
+				var fb = new Firebase(FBURL + "users/" + userId);
 				fb.on("value", function (snapshot) {
-					ref.username = snapshot.val().username;
-					ref.isUser = true;
-				});
-			}	
+					$rootScope.$apply(function () {
+						$rootScope.user = snapshot.val();
+					});
+				});	
+			},
+			getCollection: function () {
+				
+			}
 		};
 	});

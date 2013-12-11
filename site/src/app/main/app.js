@@ -16,6 +16,9 @@ var app = angular.module("app", [
 	})
 	.when("/login", {
 		templateUrl: "validation/login.tpl.html"
+	})
+	.when("/user", {
+		templateUrl: "content/userpage.tpl.html"
 	});
 		
 	$locationProvider.html5Mode(true);
@@ -25,9 +28,14 @@ var app = angular.module("app", [
 	
 })
 
-.run(function (FBURL, $firebaseAuth, $rootScope, $location) {
+.run(function (FBURL, $firebaseAuth, $rootScope, $location, User) {
 	$rootScope.auth = $firebaseAuth(new Firebase(FBURL));
 	$rootScope.$on("$firebaseAuth:login", function(e, user) {
+		User.getSingle(user.id);
+		$location.path("/");
+	});
+	$rootScope.$on("$firebaseAuth:logout", function (e, user) {
+		$rootScope.user = null;
 		$location.path("/");
 	});
 })
