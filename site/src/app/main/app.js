@@ -2,7 +2,8 @@ var app = angular.module("app", [
 	"html-templates",
 	"ngRoute",
 	"firebase",
-	"userData"
+	"userData",
+    "landing"
 ])
 
 .config(function ($routeProvider, $locationProvider) {
@@ -22,6 +23,10 @@ var app = angular.module("app", [
 	});
 		
 	$locationProvider.html5Mode(true);
+    
+    SC.initialize({
+        client_id: "4ccedb41319a68ce1daa392a3ce5ef55"
+    });
 })
 
 .controller("MainCtrl", function ($scope, $route, $routeParams) {

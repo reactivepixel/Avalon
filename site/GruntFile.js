@@ -25,32 +25,33 @@ module.exports = function (grunt) {
 		uglify: {
 			dist: {
 				src: ["src/build/avalon-app.js"],
-				dest: "dist/avalon-app-min.js"
+				dest: "/var/www/avalon-app-min.js"
 			}
 		},
 		concat: {
 			dist: {
 				src: ["src/**/*.js"],
-				dest: "dist/avalon-app.js"
+				dest: "/var/www/avalon-app.js"
 			},
 			index: {
 				src: ["src/app/main/index.html"],
-				dest: "dist/index.html"
+				dest: "/var/www/index.html"
 			},
 			angular: {
 				src: ["vendor/angular/angular.min.js"],
-				dest: "dist/vendor/angular.js"
+				dest: "/var/www/vendor/angular.js"
 			},
 			angularRoute: {
 				src: ["vendor/angular/angular-route.min.js"],
-				dest: "dist/vendor/angular-route.js"
+				dest: "/var/www/vendor/angular-route.js"
 			},
 			angularFire: {
 				src: ["vendor/angular/angularfire.min.js"],
-				dest: "dist/vendor/angular-fire.js"
+				dest: "/var/www/vendor/angular-fire.js"
 			}
 		},
-		clean: ["dist/*", "src/build/*"]
+//		clean: ["dist/*", "src/build/*"]
+        clean: ["/var/www/*", "src/build/*"]
 	});
 	
 };
