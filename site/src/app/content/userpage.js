@@ -10,9 +10,14 @@ function UserPageCtrl($scope, $rootScope) {
     
     $scope.getMyStuff = function () {
         $scope.template = "content/mystuff.tpl.html";
-        console.log($rootScope.userSC);
-//        SC.get();
+        SC.get("/me/tracks", function (tracks) {
+            $scope.$apply(function () {
+                $scope.myTracks = tracks;
+            });
+        });            
     };
+    
+    $scope.myTracks = [];
     
     $scope.template = "";
     
