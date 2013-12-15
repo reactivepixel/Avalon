@@ -48,11 +48,7 @@ module.exports = function (grunt) {
 			angularFire: {
 				src: ["vendor/angular/angularfire.min.js"],
 				dest: "/var/www/vendor/angular-fire.js"
-			},
-            soundCloud: {
-                src: ["src/app/external/callback.html"],
-                dest: "/var/www/external/callback.html"
-            }
+			}
 		},
         clean: ["/var/www/*", "src/build/*"]
 	});
