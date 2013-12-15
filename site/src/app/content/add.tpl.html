@@ -7,12 +7,26 @@
         
 		<div ng-show="isVideo">
             <h4>Video</h4>
+            
+<!--
+            <label>Title</label><input type="text" ng-model="video.title" placeholder="Title of Video" />
+            
+            <label>Vimeo</label><input type="radio" name="videoType" ng-model="video.type" value="vimeo" />
+            <label>YouTube</label><input type="radio" name="videotype" ng-model="video.type" value="youtube" />
+            
+            <label>url</label><input type="text" ng-model="video.url" placeholder="URL Link" />
+            <label for="genre">Genre</label><select ng-model="video.genre" ng-options="g.name for g in genres">
+                <option value=""> -- choose -- </option>
+            </select>
+            
+            <button ng-click="addVideo(video)">Add Video</button>
+-->
         </div>
         
         <div ng-show="isTrack">
             <h4>Track</h4>
             
-            <label for="trackTitle">Title</label><input type="text" name="trackTitle" id="trackTitle" placeholder="Title of Track" required />
+            <label>Title</label><input type="text" ng-model="track.title" placeholder="Title of Track" />
             <label for="genre">Genre</label><select ng-model="track.genre" ng-options="g.name for g in genres">
                 <option value=""> -- choose -- </option>
             </select>
@@ -21,10 +35,9 @@
             <button ng-click="stop()">Stop</button>
             
             <ul id="audioPlayback">
-                <li>Play</li>
-                <li>Pause</li>
-                <li>Replay</li>
-                <li>Upload</li>
+                <li ng-click="play()">Play</li>
+                <li>Time: {{time}}</li>
+                <li ng-click="add(track)">Upload</li>
             </ul>
         </div>
 	</fieldset>	

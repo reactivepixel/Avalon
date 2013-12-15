@@ -4,6 +4,8 @@ function AddCtrl($scope) {
     $scope.isVideo = false;
     $scope.genres = [{name: "Trance"}, {name: "Talk"}, {name: "House"}];
     $scope.track = {};
+    $scope.time = "0.00";
+    $scope.video = {};
     
     $scope.changeType = function (type) {
         if (type === "track") {
@@ -16,47 +18,72 @@ function AddCtrl($scope) {
     };
     
     $scope.record = function () {
-        
+        console.log("recording");
+        SC.record({
+            progress: function(ms, avgPeak) {
+                getTime(ms);
+            }
+        });
     };
     
     $scope.stop = function () {
-        
+        console.log("stopping");
+        SC.recordStop();
     };
     
+    $scope.add = function (track) {
+        
+        if (track.title !== undefined && track.genre !== undefined) {
+            console.log("Test Passed");
+        } else {
+            console.log("Test Failed");
+        }
+        
+        SC.connect({
+            connected: function () {
+                console.log("Uploading...");
+                
+                SC.recordUpload({
+                    track: {
+                        title: track.title,
+                        genre: track.genre.name,
+                        sharing: "public"
+                    }
+                }, function (track) {
+                    console.log("Uploaded: " + track.permalink_url);
+                });
+            }
+        });
+    };
     
-//    $('#startRecording a').click(function(e) {
-//      $('#startRecording').hide();
-//      $('#stopRecording').show();
-//      e.preventDefault();
-//      SC.record({
-//        progress: function(ms, avgPeak) {
-//          updateTimer(ms);
+    $scope.play = function () {
+        console.log("playing");
+        
+//        updateTimer(0);
+        SC.recordPlay({
+            progress: function(ms) {
+//                updateTimer(ms);
+            }
+        });
+    };
+    
+//    $scope.addVideo = function (video) {        
+//        if (checkFields(video)) {
+//           
 //        }
-//      });
-//    });
-//    
-//    $('#stopRecording a').click(function(e) {
-//      e.preventDefault();
-//      $('#stopRecording').hide();
-//      $('#playBack').show();
-//      $('#upload').show();
-//      SC.recordStop();
-//    });
+//    };
+        
+    function checkFields(video) {
+        
+        if (video.title !== undefined && video.genre !== undefined && video.type !== undefined && video.url !== undefined) {
+            return true;
+        }
+        
+        return false;
+    }
     
-//    $('#upload').click(function(e) {
-//    e.preventDefault();
-//    SC.connect({
-//      connected: function() {
-//        $('.status').html('Uploading...');
-//        SC.recordUpload({
-//          track: {
-//            title: 'My Codecademy Recording',
-//            sharing: 'private'
-//          }
-//        }, function(track) {
-//          $('.status').html("Uploaded: <a href='" + track.permalink_url + "'>" + track.permalink_url + "</a>");
-//        });
-//      }
-//    });
+    function getTime(ms) {
+        $scope.time = SC.Helper.millisecondsToHMS(ms);
+    }
     
 }
