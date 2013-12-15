@@ -1,4 +1,4 @@
-function AddCtrl($scope) {
+function AddCtrl($scope, $rootScope, FBURL) {
     
     $scope.isTrack = false;
     $scope.isVideo = false;
@@ -67,11 +67,18 @@ function AddCtrl($scope) {
         });
     };
     
-//    $scope.addVideo = function (video) {        
-//        if (checkFields(video)) {
-//           
-//        }
-//    };
+    $scope.addVideo = function (video) {        
+        if (checkFields(video)) {
+            var fb = new Firebase(FBURL + "content/" + $rootScope.auth.user.id),
+                newVideo = {
+                    title: video.title,
+                    genre: video.genre.name,
+                    type:  video.type,
+                    url:   video.url
+                };
+            fb.push(newVideo);
+        }
+    };
         
     function checkFields(video) {
         
