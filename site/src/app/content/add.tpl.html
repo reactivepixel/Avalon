@@ -1,6 +1,31 @@
 <form name="addForm" ng-controller="AddCtrl">
 	<fieldset>
 		<legend>Add...</legend>
-		
+        
+        <button ng-click="changeType('track')">Track</button>
+        <button ng-click="changeType('video')">Video</button>
+        
+		<div ng-show="isVideo">
+            <h4>Video</h4>
+        </div>
+        
+        <div ng-show="isTrack">
+            <h4>Track</h4>
+            
+            <label for="trackTitle">Title</label><input type="text" name="trackTitle" id="trackTitle" placeholder="Title of Track" required />
+            <label for="genre">Genre</label><select ng-model="track.genre" ng-options="g.name for g in genres">
+                <option value=""> -- choose -- </option>
+            </select>
+            
+            <button ng-click="record()">Record</button>
+            <button ng-click="stop()">Stop</button>
+            
+            <ul id="audioPlayback">
+                <li>Play</li>
+                <li>Pause</li>
+                <li>Replay</li>
+                <li>Upload</li>
+            </ul>
+        </div>
 	</fieldset>	
 </form>

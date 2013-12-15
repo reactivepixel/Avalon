@@ -12,7 +12,9 @@ function UserPageCtrl($scope, $rootScope) {
         $scope.template = "content/mystuff.tpl.html";
         SC.get("/me/tracks", function (tracks) {
             $scope.$apply(function () {
-                $scope.myTracks = tracks;
+                for (var i = 0, max = tracks.length; i < max; i++) {
+                    SC.oEmbed(tracks[i].permalink_url, document.getElementById('widgets'));
+                }
             });
         });            
     };
