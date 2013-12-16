@@ -4,7 +4,7 @@ var app = angular.module("app", [
 	"firebase",
 	"userData",
     "landing",
-    "ngSanitize"
+    "userPage"
 ])
 
 .config(function ($routeProvider, $locationProvider) {

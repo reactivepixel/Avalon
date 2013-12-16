@@ -1,5 +1,16 @@
 <h4>Your Stuff</h4>
 
+<!--
 <ul id="widgets">
 
 </ul>
+-->
+
+<div ng-repeat="this in content">
+    <p>{{this.title}}</p>
+    <p>{{this.genre}}</p>
+    
+    <div ng-bind-html="render()"></div>
+    
+    <a href="">remove</a>
+</div>
