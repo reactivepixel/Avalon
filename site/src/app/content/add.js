@@ -74,7 +74,8 @@ function AddCtrl($scope, $rootScope, FBURL) {
                     title: video.title,
                     genre: video.genre.name,
                     type:  video.type,
-                    url:   video.url
+                    url:   video.url,
+                    username: $rootScope.user.username
                 };
             fb.push(newVideo);
         }
