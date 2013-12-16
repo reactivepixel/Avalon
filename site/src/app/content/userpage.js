@@ -39,11 +39,12 @@ function UserPageCtrl($scope, $rootScope, $firebase, FBURL) {
 //                            SC.oEmbed(tracks[i].permalink_url, document.getElementById('widgets'));
 //                        }
 //                    });
-//                });  
-                
+//                })
+                SC.oEmbed(data.url, { auto_play: false }, function(oEmbed) {
+                    widgets.innerHTML += oEmbed.html;
+                });
             } else if (data.type === "vimeo") {
-                console.log("We also have a vimeo video");
-//                <iframe src="//player.vimeo.com/video/17483947" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/17483947">Flyin' High - Trance Music Fractal Soundscapes</a> from <a href="http://vimeo.com/user5397940">Alex Smith</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                widgets.innerHTML += "<iframe src='//player.vimeo.com/video/" + data.url + "' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
             } 
         });
     };

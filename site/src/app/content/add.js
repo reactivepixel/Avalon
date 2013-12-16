@@ -51,6 +51,16 @@ function AddCtrl($scope, $rootScope, FBURL) {
                     }
                 }, function (track) {
                     console.log("Uploaded: " + track.permalink_url);
+                    
+                    var fb = new Firebase(FBURL + "content/" + $rootScope.auth.user.id),
+                        newTrack = {
+                            title: track.title,
+                            genre: track.genre,
+                            url: track.permalink_url,
+                            type: "track"
+                        };
+                    
+                    fb.push(newTrack);
                 });
             }
         });
