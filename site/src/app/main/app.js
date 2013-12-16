@@ -3,7 +3,8 @@ var app = angular.module("app", [
 	"ngRoute",
 	"firebase",
 	"userData",
-    "landing"
+    "landing",
+    "ngSanitize"
 ])
 
 .config(function ($routeProvider, $locationProvider) {
