@@ -45,6 +45,10 @@ module.exports = function (grunt) {
 				src: ["vendor/angular/angular-route.min.js"],
 				dest: "/var/www/vendor/angular-route.js"
 			},
+            angularSanitize: {
+                src: ["vendor/angular/angular-sanitize.min.js"],
+                dest: "/var/www/vendor/angular-sanitize.js"
+            },
 			angularFire: {
 				src: ["vendor/angular/angularfire.min.js"],
 				dest: "/var/www/vendor/angular-fire.js"
