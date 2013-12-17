@@ -21,7 +21,13 @@ var app = angular.module("app", [
 	})
 	.when("/user", {
 		templateUrl: "content/userpage.tpl.html"
-	});
+	})
+    .when("/toptracks", {
+        templateUrl: "content/toptracks.tpl.html"
+    })
+    .when("/artists", {
+        templateUrl: "content/artists.tpl.html"
+    });
 		
 	$locationProvider.html5Mode(true);
 
