@@ -1,6 +1,7 @@
-function ArtistsCtrl($scope, FBURL, $sce) {
+function ArtistsCtrl($scope, FBURL, $sce, $rootScope) {
     
     $scope.content = [];
+    $scope.comments = [];
     
     $scope.searchArtist = function () {
         $scope.content = [];
@@ -23,8 +24,9 @@ function ArtistsCtrl($scope, FBURL, $sce) {
         new Firebase(FBURL+"content/"+id)
             .once("value", function (snapshot) {
                 snapshot.forEach(function (child) {
-    
+                    
                     var data = child.val();
+                    data.id = child.name();
                     
                     if (data.type === "youtube" || data.type === "vimeo") {
                         $scope.$apply(function () {
@@ -33,6 +35,7 @@ function ArtistsCtrl($scope, FBURL, $sce) {
                             } else if (data.type === "vimeo") {
                                 data.embed = "<iframe src='//player.vimeo.com/video/"+data.url+"' width='640' height='360' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
                             } 
+                            data.commentsEnabled = true;
                             $scope.content.push(data);
                         });
                     }
@@ -54,4 +57,20 @@ function ArtistsCtrl($scope, FBURL, $sce) {
             return $sce.trustAsHtml(text);
         }
     };
+    
+    $scope.addComment = function (text, that) {
+        var ref = new Firebase(FBURL+"comments/"+that+"/");
+        ref.push(text);
+    };
+    
+    $scope.showComments = function (that) {
+        var ref = new Firebase(FBURL+"comments/"+that+"/");
+        ref.once("value", function (snapshot) {
+            snapshot.forEach(function (child) {
+                $scope.$apply(function () {
+                    $scope.comments.push(child.val());
+                });
+            });
+        });
+    }; 
 }

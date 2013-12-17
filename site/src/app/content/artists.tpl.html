@@ -10,6 +10,19 @@
         <p>{{this.genre}}</p>
         
         <div ng-bind-html="render(this.embed)"></div>
+        
+        <div ng-show="this.commentsEnabled">
+            <button ng-click="showComments(this.id)">Show Comments</button>
+            
+            <div ng-show="user.username">
+                <textarea ng-model="comment" placeholder="add your comment..."></textarea>
+                <button ng-click="addComment(comment, this.id)">Add Comment</button>
+            </div>
+            
+            <ul>
+                <li ng-repeat="comment in comments">{{this.comment}}</li>
+            </ul>
+        </div>
     </div>
     
 </section>
