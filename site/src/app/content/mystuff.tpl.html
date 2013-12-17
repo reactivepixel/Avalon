@@ -10,7 +10,7 @@
     <p>{{this.title}}</p>
     <p>{{this.genre}}</p>
     
-    <div ng-bind-html="render()"></div>
+    <div ng-bind-html="render(this.embed)"></div>
     
-    <a href="">remove</a>
+    <a href="" ng-click="remove(this.id)">remove</a>
 </div>
