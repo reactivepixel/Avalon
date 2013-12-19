@@ -1,10 +1,20 @@
-$font-stack:    Helvetica, sans-serif;
+// Default Font
+$font-stack:    "sans-serif";
 
+// Color Scheme
 $lightBlue:     #64AA90;
 $navyBlue:      #0A3142;
 $darkBlue:      #001F30;
 $limeGreen:     #B3D61A;
 $mustardYellow: #E1E181;
+$gray:          #4d4d4d;
+
+// Assets
+$blackTexture:  url("../assets/blacktexture.png");
+
+// Dimensions
+$headerHeight:  60px;
+
 
 
 // CSS Reset
@@ -20,5 +30,101 @@ menu, nav, section, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font: $font-stack;
+	font-family: $font-stack;
 }
+
+
+
+// Body
+body {
+    background: $gray $blackTexture repeat;
+}
+
+// Header
+header {
+    height: $headerHeight;
+    background-color: $navyBlue;
+    color: white;
+    line-height: $headerHeight;
+    
+    h1 {
+        float: left;
+        margin-left: 20px;
+    }
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+        
+    }
+
+    ul {
+        float: right;    
+        list-style-type: none;
+        
+    }
+
+    li {
+        float: left;
+    
+        a {
+            color: $navyBlue;
+            display: block;
+            width: 100px;
+            text-align: center;
+            background-color: $limeGreen;
+        }
+
+        a:hover {
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,17 +1,12 @@
 <h1><a href="" ng-click="redirectHome()">Avalon</a></h1>
 
-<div>
-	<ul>
-		<li ng-show="!user"><a href="signup">Sign Up</a></li>
-		<li ng-show="!user"><a href="login">Log In</a></li>
+<nav>
+    <ul>
+        <li><a href="artists">Artists</a></li>
+        <li><a href="toptracks">Top Tracks</a></li>
+        <li ng-show="!user"><a href="login">Log In</a></li>
+        <li ng-show="!user"><a href="signup">Sign Up</a></li>
 		<li ng-show="user">Welcome! <a href="user" ng-bind="user.username"></a></li>
 		<li ng-show="user"><a href="" ng-click="logOut()">Log Out</a></li>
-	</ul>
-</div>
-
-<nav>
-	<ul>
-		<li><a href="artists">Avalon Artists</a></li>
-		<li><a href="toptracks">Most Relevant Tracks</a></li>
-	</ul>
+    </ul>
 </nav>

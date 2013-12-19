@@ -7,8 +7,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-html2js");
     grunt.loadNpmTasks("grunt-contrib-sass");
+    grunt.loadNpmTasks("grunt-contrib-copy");
 	
-	grunt.registerTask("build", ["clean", "html2js", "concat", "sass"]);
+	grunt.registerTask("build", ["clean", "html2js", "concat", "sass", "copy"]);
 	
 	grunt.initConfig({
 		html2js: {
@@ -66,6 +67,16 @@ module.exports = function (grunt) {
                     ext: ".css"
                 }]
             }
+        },
+        copy: {
+          main: {
+            files: [{
+                expand: true, 
+                src: ["*"], 
+                dest: "/var/www/assets",
+                cwd: "assets"
+            }]
+          }
         }
 	});
 	
