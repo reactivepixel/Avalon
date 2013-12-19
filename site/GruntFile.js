@@ -6,8 +6,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-html2js");
+    grunt.loadNpmTasks("grunt-contrib-sass");
 	
-	grunt.registerTask("build", ["clean", "html2js", "concat"]);
+	grunt.registerTask("build", ["clean", "html2js", "concat", "sass"]);
 	
 	grunt.initConfig({
 		html2js: {
@@ -54,7 +55,35 @@ module.exports = function (grunt) {
 				dest: "/var/www/vendor/angular-fire.js"
 			}
 		},
-        clean: ["/var/www/*", "src/build/*"]
+        clean: ["/var/www/*", "src/build/*"],
+        sass: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: "src/style",
+                    src: ["main.scss"],
+                    dest: "/var/www/css",
+                    ext: ".css"
+                }]
+            }
+        }
 	});
 	
 };
+
+//grunt.initConfig({
+//  sass: {
+//    dist: {
+//      files: [{
+//        expand: true,
+//        cwd: 'styles',
+//        src: ['*.scss'],
+//        dest: '../public',
+//        ext: '.css'
+//      }]
+//    }
+//  }
+//});
+
+
+
