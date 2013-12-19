@@ -12,9 +12,6 @@ $gray:          #4d4d4d;
 // Assets
 $blackTexture:  url("../assets/blacktexture.png");
 
-// Dimensions
-$headerHeight:  60px;
-
 
 
 // CSS Reset
@@ -42,10 +39,13 @@ body {
 
 // Header
 header {
-    height: $headerHeight;
+    height: 60px;
     background-color: $navyBlue;
     color: white;
-    line-height: $headerHeight;
+    line-height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
     
     h1 {
         float: left;
@@ -61,7 +61,6 @@ header {
     ul {
         float: right;    
         list-style-type: none;
-        
     }
 
     li {
@@ -70,16 +69,42 @@ header {
         a {
             color: $navyBlue;
             display: block;
-            width: 100px;
+            width: 150px;
             text-align: center;
             background-color: $limeGreen;
         }
 
         a:hover {
+            background-color: white;
             font-weight: bold;
         }
     }
 }
+
+// Main Container
+.main_container {
+    margin: 100px 20px;
+}
+
+// Footer
+footer {
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    background-color: $navyBlue;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    p {
+        margin-left: 20px;
+    }
+}
+
+
+
+// Log In
+
 
 
 
