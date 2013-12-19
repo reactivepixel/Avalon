@@ -1,0 +1,147 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, big, cite, code,
+em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup,
+b, u, i, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, footer, header,
+menu, nav, section, audio, video, button, input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: "sans-serif"; }
+
+.clearfix {
+  overflow: auto; }
+
+.push_right {
+  margin-left: 30px; }
+
+body {
+  background: #4d4d4d url("../assets/blacktexture.png") repeat; }
+
+header {
+  height: 60px;
+  background-color: #0a3142;
+  color: white;
+  line-height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0; }
+  header h1 {
+    float: left;
+    margin-left: 20px; }
+  header a {
+    color: inherit;
+    text-decoration: none; }
+  header ul {
+    float: right;
+    list-style-type: none; }
+  header li {
+    float: left; }
+    header li a {
+      color: #0a3142;
+      display: block;
+      width: 150px;
+      text-align: center;
+      background-color: #b3d61a; }
+    header li a:hover {
+      background-color: white;
+      font-weight: bold; }
+
+.main_container {
+  margin: 100px 20px;
+  color: white; }
+
+footer {
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  background-color: #0a3142;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  footer p {
+    margin-left: 20px; }
+
+form {
+  background-color: #001f30;
+  width: 280px;
+  padding: 20px;
+  border-radius: 15px; }
+  form legend {
+    font-size: 125%;
+    font-weight: bold;
+    margin-bottom: 15px; }
+  form label, form input {
+    display: block; }
+  form input {
+    width: 100%;
+    margin: 10px 0;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    padding-left: 5px; }
+
+.toa_and_privacy {
+  margin: 15px 0; }
+  .toa_and_privacy a {
+    font-weight: bold;
+    color: white; }
+
+.authentication_cta {
+  margin-top: 20px; }
+  .authentication_cta a {
+    color: white; }
+  .authentication_cta a:hover {
+    font-weight: bold; }
+
+button {
+  float: right;
+  background-color: white;
+  color: #0a3142;
+  border-radius: 5px;
+  text-align: center;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold; }
+
+.search_bar {
+  padding: 20px;
+  width: 320px; }
+  .search_bar input {
+    display: inline;
+    width: 220px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    padding-left: 5px; }
+  .search_bar button {
+    height: 25px;
+    line-height: 25px; }
+
+.user_section h3 {
+  margin: 25px 0; }
+.user_section ul {
+  list-style-type: none;
+  margin-bottom: 40px; }
+.user_section li {
+  float: left; }
+  .user_section li a {
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #b3d61a;
+    color: #0a3142;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold; }
+.user_section .content_type {
+  margin-bottom: 20px; }
+  .user_section .content_type button {
+    float: none; }
