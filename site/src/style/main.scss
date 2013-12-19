@@ -36,6 +36,10 @@ menu, nav, section, audio, video, button, input {
     overflow: auto;
 }
 
+.push_right {
+    margin-left: 30px;
+}
+
 
 
 // Body
@@ -196,7 +200,43 @@ button {
 
 
 
+// User Page
+.user_section {
+    
+    h3 {
+        margin: 25px 0;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin-bottom: 40px;
+    }
 
+    li {
+        float: left;
+    
+        a {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background-color: $limeGreen;
+            color: $navyBlue;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    }
+
+    .content_type {
+        margin-bottom: 20px;
+    
+        button {
+            float: none;
+        }
+    }
+}
 
 
 

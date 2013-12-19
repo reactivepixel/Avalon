@@ -1,12 +1,11 @@
 <h2>This is the user page.</h2>
 
-<section ng-controller="UserPageCtrl">
+<section ng-controller="UserPageCtrl" class="user_section">
     <h3>Your Content</h3>
-    <p><a href="" ng-click="linkSC()">Log in to your SoundCloud to add tracks!</a></p>
     
-    <ul>
+    <ul class="clearfix">
         <li><a href="" ng-click="getMyStuff()">My Stuff</a></li>
-        <li><a href="" ng-click="template = 'content/add.tpl.html'">Add</a></li>
+        <li class="push_right"><a href="" ng-click="template = 'content/add.tpl.html'">Add</a></li>
     </ul>
     
     <div ng-include="template"></div>

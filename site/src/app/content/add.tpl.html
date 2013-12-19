@@ -2,8 +2,10 @@
 	<fieldset>
 		<legend>Add...</legend>
         
-        <button ng-click="changeType('track')">Track</button>
-        <button ng-click="changeType('video')">Video</button>
+        <div class="content_type">
+            <button ng-click="changeType('track')">Track</button>
+            <button ng-click="changeType('video')">Video</button>
+        </div>
         
 		<div ng-show="isVideo">
             <h4>Video</h4>
