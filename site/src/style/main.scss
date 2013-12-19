@@ -23,11 +23,17 @@ small, strong, sub, sup,
 b, u, i, ol, ul, li,
 fieldset, form, label, legend,
 article, aside, footer, header, 
-menu, nav, section, audio, video {
+menu, nav, section, audio, video, button, input {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border: none;
+    outline: none;
 	font-family: $font-stack;
+}
+
+// Helper Classes
+.clearfix {
+    overflow: auto;
 }
 
 
@@ -84,6 +90,7 @@ header {
 // Main Container
 .main_container {
     margin: 100px 20px;
+    color: white;
 }
 
 // Footer
@@ -103,8 +110,65 @@ footer {
 
 
 
-// Log In
+// Log In & Sign Up Forms
+form {
+    background-color: $darkBlue;
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    
+    legend {
+        font-size: 125%;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    label, input {
+        display: block;
+    }
 
+    input {
+        width: 100%;
+        margin: 10px 0;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 5px;
+        padding-left: 5px;
+    }
+}
+
+.toa_and_privacy {
+    margin: 15px 0;
+    
+    a {
+        font-weight: bold;
+        color: white;
+    }
+}
+
+.authentication_cta {
+    margin-top: 20px;
+    
+    a {
+        color: white;
+    }
+
+    a:hover {
+        font-weight: bold;
+    }
+
+    button {
+        float: right;
+        background-color: white;
+        color: $navyBlue;
+        border-radius: 5px;
+        text-align: center;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+}
 
 
 

@@ -6,7 +6,7 @@
         <li><a href="toptracks">Top Tracks</a></li>
         <li ng-show="!user"><a href="login">Log In</a></li>
         <li ng-show="!user"><a href="signup">Sign Up</a></li>
-		<li ng-show="user">Welcome! <a href="user" ng-bind="user.username"></a></li>
+		<li ng-show="user"><a href="user" ng-bind="user.username"></a></li>
 		<li ng-show="user"><a href="" ng-click="logOut()">Log Out</a></li>
     </ul>
 </nav>
