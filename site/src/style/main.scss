@@ -5,6 +5,9 @@ $font-stack:    sans-serif;
 
 // Assets
 $blackTexture:  url("../assets/blacktexture.png");
+$paperTexture:  url("../assets/papertexture.png");
+$servicesImg:   url("../assets/services.png");
+$landingBG:     url("../assets/landing_bg.jpg");
 
 
 
@@ -23,6 +26,15 @@ menu, nav, section, audio, video, button, input {
 	border: none;
     outline: none;
 	font-family: $font-stack;
+}
+
+// Defaults 
+body {
+    line-height: 125%;
+}
+
+hr {
+    margin: 15px 0 25px 0;
 }
 
 // Helper Classes
@@ -78,13 +90,13 @@ header {
     }
 }
 
+
+
+// Landing Page
 .landing_section {
-    padding-top: 100px;
-    height: 400px;
-    
-    hr {
-        margin-bottom: 30px;
-    }
+    padding: 100px 0;
+    height: 350px;
+    background-image: $landingBG;
     
     .left_column {
         float: left;
@@ -95,17 +107,26 @@ header {
         }
     
         ul {
-            padding-left: 20px;
+            color: white;
+            list-style-type: none;
         }
 
         li {
             margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+    
+            a {
+                color: white;
+                font-weight: bold;
+            }
         }
     }
     
     form {
         float: right;
-        background-color: #002836;
+        background-color: rgba(0, 0, 0, 0.9);
         width: 30%;
         padding: 10px 20px;
         border-radius: 10px;
@@ -120,11 +141,11 @@ header {
     
         input {
             display: block;
-            width: 97%;
+            width: 100%;
             margin: 20px 0px;
             height: 30px;
             font-size: 14px;
-            padding-left: 3%;
+            text-indent: 10px;
             border-radius: 5px;
         }
 
@@ -136,13 +157,34 @@ header {
             line-height: 25px;
             background: white;
             font-size: 14px;
-            color: #002836;
+            color: black;
             border-radius: 5px;
+            font-weight: bold;
         }
     }
 }
 
+.example_section {
+    height: 400px;
+    box-shadow: 0px -2px 4px #4d4d4d;
+    padding-top: 50px;
+    background: white $paperTexture repeat;
+    
+    .left_column {
+        width: 45%;
+        float: left;
+    
+        p {
+            text-indent: 1em;
+            margin-bottom: 25px;
+        }
+    }
 
+    img {
+        float: right;
+        width: 35%;
+    }
+}
 
 
 
