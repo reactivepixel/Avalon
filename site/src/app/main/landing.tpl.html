@@ -1,10 +1,24 @@
-<div class="margin_center">
-    <h2>Welcome to Avalon!</h2>
+<div class="margin_center landing_section">
+    <h2>Welcome!</h2>
+    <hr>
     
-    <div ng-show="!user">
-        <p>Upload all your creative work by just <a href="signup">Signing Up</a></p>
+    <div class="left_column">
+        <p ng-show="user">{{user.username}}, why not add something new today? <a href="user">Upload Now</a></p>
+        
+        <h3>Newest Features:</h3>
+        <ul ng-show="!user">
+            <li>Search for any kind of content in Avalon with the <a href="">explore</a> feature.</li>
+            <li>Record your audio and upload it to SoundCloud directly from Avalon. (Login Required)</li>
+        </ul>
     </div>
-    <div ng-show="user">
-        <p>{{user.username}}, why not add something new today? <a href="user">Upload Now!</a></p>
-    </div>
+    
+    <form ng-show="!user" class="clearfix">
+        <fieldset>
+            <legend>New to Avalon? Sign Up Here!</legend>
+            <input type="text" name="fullName" placeholder="Full Name" ng-model="form.fullName" required />
+            <input type="email" name="email" placeholder="Email" ng-model="form.email" required />
+            <input type="password" name="password" placeholder="Password" ng-model="form.password" ng-minLength="4" required />
+            <button ng-click="submit(form)">Sign Up</button>
+        <fieldset>
+    </form>
 </div>

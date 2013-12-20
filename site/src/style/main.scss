@@ -5,7 +5,6 @@ $font-stack:    sans-serif;
 
 // Assets
 $blackTexture:  url("../assets/blacktexture.png");
-$shapeTexture:  url("../assets/geometry.png");
 
 
 
@@ -47,6 +46,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    box-shadow: 0px 1px 1px #000000;
     
     h1 {
         float: left;
@@ -71,152 +71,66 @@ header {
             text-align: center;
             font-size: 14px;
         }
+
+        a:hover {
+            text-decoration: underline;
+        }
     }
 }
 
-.main_container {
+.landing_section {
     padding-top: 100px;
-    height: 450px;
-    background: white $shapeTexture repeat;
-}
-
-/*
-
-// Main Container
-.main_container {
-    margin: 100px 20px;
-    color: white;
-}
-
-
-
-
-
-// Log In & Sign Up Forms
-form {
-    background-color: $darkBlue;
-    width: 280px;
-    padding: 20px;
-    border-radius: 15px;
+    height: 400px;
     
-    legend {
-        font-size: 125%;
-        font-weight: bold;
-        margin-bottom: 15px;
+    hr {
+        margin-bottom: 30px;
     }
     
-    label, input {
-        display: block;
-    }
-
-    input {
-        width: 100%;
-        margin: 10px 0;
-        height: 25px;
-        line-height: 25px;
-        border-radius: 5px;
-        padding-left: 5px;
-    }
-}
-
-.toa_and_privacy {
-    margin: 15px 0;
-    
-    a {
-        font-weight: bold;
-        color: white;
-    }
-}
-
-.authentication_cta {
-    margin-top: 20px;
-    
-    a {
-        color: white;
-    }
-
-    a:hover {
-        font-weight: bold;
-    }
-
-    
-}
-
-button {
-    float: right;
-    background-color: white;
-    color: $navyBlue;
-    border-radius: 5px;
-    text-align: center;
-    width: 80px;
-    height: 30px;
-    line-height: 30px;
-    font-weight: bold;
-}
-
-
-
-// Artist Search Bar
-.search_bar {
-    padding: 20px;
-    width: 320px;
-    
-    input {
-        display: inline;
-        width: 220px;
-        height: 25px;
-        line-height: 25px;
-        border-radius: 5px;
-        padding-left: 5px;
-    }
-
-    button {
-        height: 25px;
-        line-height: 25px;
-    }
-}
-
-
-
-// User Page
-.user_section {
-    
-    h3 {
-        margin: 25px 0;
-    }
-    
-    ul {
-        list-style-type: none;
-        margin-bottom: 40px;
-    }
-
-    li {
+    .left_column {
         float: left;
-    
-        a {
-            display: block;
-            width: 100px;
-            height: 30px;
-            line-height: 30px;
-            background-color: $limeGreen;
-            color: $navyBlue;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+        width: 45%;
     }
-
-    .content_type {
-        margin-bottom: 20px;
     
+    form {
+        float: right;
+        background-color: #002836;
+        width: 30%;
+        padding: 10px 20px;
+        border-radius: 10px;
+        
+        legend {
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 30px;
+            text-align: center;
+            color: white;
+        }
+    
+        input {
+            display: block;
+            width: 97%;
+            margin: 20px 0px;
+            height: 30px;
+            font-size: 14px;
+            padding-left: 3%;
+            border-radius: 5px;
+        }
+
         button {
-            float: none;
+            float: right;
+            text-align: center;
+            height: 25px;
+            width: 80px;
+            line-height: 25px;
+            background: white;
+            font-size: 14px;
+            color: #002836;
+            border-radius: 5px;
         }
     }
 }
 
-*/
+
 
 
 
