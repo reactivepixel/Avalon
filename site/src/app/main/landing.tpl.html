@@ -1,1 +1,10 @@
-<h2>Avalon is up and running!</h2>
+<div class="margin_center">
+    <h2>Welcome to Avalon!</h2>
+    
+    <div ng-show="!user">
+        <p>Upload all your creative work by just <a href="signup">Signing Up</a></p>
+    </div>
+    <div ng-show="user">
+        <p>{{user.username}}, why not add something new today? <a href="user">Upload Now!</a></p>
+    </div>
+</div>
