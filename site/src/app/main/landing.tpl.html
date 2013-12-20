@@ -5,11 +5,14 @@
     <div class="left_column">
         <p ng-show="user">{{user.username}}, why not add something new today? <a href="user">Upload Now</a></p>
         
-        <h3>Newest Features:</h3>
-        <ul ng-show="!user">
-            <li>Search for any kind of content in Avalon with the <a href="">explore</a> feature.</li>
-            <li>Record your audio and upload it to SoundCloud directly from Avalon. (Login Required)</li>
-        </ul>
+        <div ng-show="!user">
+            <h3>Newest Features:</h3>
+            <ul>
+                <li>Search for any kind of content in Avalon with the <a href="explore">explore</a> feature.</li>
+                <li>Record your audio and upload it to SoundCloud directly from Avalon. (Login Required)</li>
+                <li>Link any video from YouTube or Vimeo.</li>
+            </ul>
+        </div>
     </div>
     
     <form ng-show="!user" class="clearfix">
