@@ -48,6 +48,10 @@ hr {
     margin: 0 auto;
 }
 
+.push_right {
+    float: right;
+}
+
 
 
 // Header & Footer
@@ -61,6 +65,15 @@ header {
     width: 100%;
     top: 0;
     box-shadow: 0px 1px 1px #000000;
+    
+    p {
+        float: left;
+        
+        a {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
     
     h1 {
         float: left;

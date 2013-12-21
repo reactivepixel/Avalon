@@ -2,11 +2,13 @@
     
     <div class="clearfix landing_section">
         <div class="margin_center">
-            <h2>Welcome!</h2>
+            <h2>Welcome! {{user.username}}</h2>
             <hr>
             
             <div class="left_column">
-                <p ng-show="user">{{user.username}}, why not add something new today? <a href="#/user">Upload Now</a></p>
+                <ul>
+                    <li ng-show="user">{{user.username}}, why not add something new today? <a class="push_right" href="#/user">Upload Now</a></li>
+                </ul>
                 
                 <div ng-show="!user">
                     <h3>Newest Features:</h3>
