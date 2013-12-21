@@ -27,6 +27,9 @@ var app = angular.module("app", [
     })
     .when("/artists", {
         templateUrl: "content/artists.tpl.html"
+    })
+    .when("/explore", {
+        templateUrl: "content/explore.tpl.html"
     });
 		
 	$locationProvider.html5Mode(false);

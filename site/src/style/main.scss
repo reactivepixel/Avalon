@@ -8,6 +8,7 @@ $blackTexture:  url("../assets/blacktexture.png");
 $paperTexture:  url("../assets/papertexture.png");
 $servicesImg:   url("../assets/services.png");
 $landingBG:     url("../assets/landing_bg.jpg");
+$hexBG:         url("../assets/hex_bg.jpg");
 
 
 
@@ -155,6 +156,12 @@ header {
 
         a {
             line-height: 25px;
+            color: white;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: none;
         }
 
         button {
@@ -195,6 +202,41 @@ header {
 }
 
 
+
+// Explore Page
+.explore_section {
+    margin-top: 100px;
+    
+    form {
+        
+        input {
+            width: 50%;
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 30px;
+            text-indent: 1em;
+        }
+
+        button {
+            width: 80px;
+            height: 34px;
+            text-align: center;
+            font-weight: bold;
+            background-color: black;
+            border-radius: 10px;
+            color: white;
+        }
+
+    }
+}
+
+body {
+    background-image: $hexBG;
+    background-repeat: no-repeat;
+    background-position: 80% 80%;
+    background-attachment: fixed;
+    height: 100%;
+}
 
 
 
