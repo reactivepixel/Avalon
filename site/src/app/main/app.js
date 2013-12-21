@@ -4,7 +4,8 @@ var app = angular.module("app", [
 	"firebase",
 	"userData",
     "landing",
-    "userPage"
+    "userPage",
+    "authentication"
 ])
 
 .config(function ($routeProvider, $locationProvider) {

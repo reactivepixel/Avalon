@@ -1,4 +1,4 @@
-<section ng-controller="LandingCtrl">
+<section>
     
     <div class="clearfix landing_section">
         <div class="margin_center">
@@ -12,13 +12,13 @@
                     <h3>Newest Features:</h3>
                     <ul>
                         <li>Search for any kind of content in Avalon with the <a href="#/explore">explore</a> feature.</li>
-                        <li>Record your audio and upload it to SoundCloud directly from Avalon. (Login Required)</li>
+                        <li>Link audio from SoundCloud.</li>
                         <li>Link any video from YouTube or Vimeo.</li>
                     </ul>
                 </div>
             </div>
             
-            <form class="clearfix" ng-show="!user" ng-include="formTemplate"></form>
+            <form ng-controller="AuthenticationCtrl" class="clearfix" ng-show="!user" ng-include="formTemplate"></form>
         </div>
     </div>
             
