@@ -1,4 +1,4 @@
-<div>
+<section ng-controller="LandingCtrl">
     
     <div class="clearfix landing_section">
         <div class="margin_center">
@@ -6,35 +6,26 @@
             <hr>
             
             <div class="left_column">
-                <p ng-show="user">{{user.username}}, why not add something new today? <a href="user">Upload Now</a></p>
+                <p ng-show="user">{{user.username}}, why not add something new today? <a href="#/user">Upload Now</a></p>
                 
                 <div ng-show="!user">
                     <h3>Newest Features:</h3>
                     <ul>
-                        <li>Search for any kind of content in Avalon with the <a href="explore">explore</a> feature.</li>
+                        <li>Search for any kind of content in Avalon with the <a href="#/explore">explore</a> feature.</li>
                         <li>Record your audio and upload it to SoundCloud directly from Avalon. (Login Required)</li>
                         <li>Link any video from YouTube or Vimeo.</li>
                     </ul>
                 </div>
             </div>
             
-            <form ng-show="!user" class="clearfix">
-                <fieldset>
-                    <legend>New to Avalon? Sign Up Here!</legend>
-                    <input type="text" name="fullName" placeholder="Full Name" ng-model="form.fullName" required />
-                    <input type="email" name="email" placeholder="Email" ng-model="form.email" required />
-                    <input type="password" name="password" placeholder="Password" ng-model="form.password" ng-minLength="4" required />
-                    <button ng-click="submit(form)">Sign Up</button>
-                <fieldset>
-            </form>
+            <form class="clearfix" ng-show="!user" ng-include="formTemplate"></form>
         </div>
     </div>
             
-    <div class="example_section">
+    <article class="example_section">
         <div class="margin_center">
             <div class="left_column">
                 <h2>What is Avalon?</h2>
-                
                 <hr>
                 
                 <p>Avalon is where artists of all kinds promote their creative work easily and effectively with other artists. We believe that you should be able to easily find the work of other like minded artists easily. If you doubt our service, please try and explore for content in Avalon and see how easy it is to find art.</p>
@@ -44,6 +35,6 @@
             
             <img src="assets/services.png" />
         </div>
-    </div>
+    </article>
             
-</div>
+</section>

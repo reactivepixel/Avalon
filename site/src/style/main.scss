@@ -51,6 +51,7 @@ hr {
 
 // Header & Footer
 header {
+    z-index: 1000;
     height: 50px;
     background: black $blackTexture repeat;
     color: white;
@@ -98,6 +99,10 @@ header {
     height: 350px;
     background-image: $landingBG;
     
+    hr {
+        opacity: 0.5;
+    }
+    
     .left_column {
         float: left;
         width: 55%;
@@ -127,15 +132,14 @@ header {
     form {
         float: right;
         background-color: rgba(0, 0, 0, 0.9);
-        width: 30%;
-        padding: 10px 20px;
+        width: 35%;
+        padding: 10px 20px 30px;
         border-radius: 10px;
         
         legend {
             font-weight: bold;
             font-size: 125%;
             margin-bottom: 30px;
-            text-align: center;
             color: white;
         }
     
@@ -147,6 +151,10 @@ header {
             font-size: 14px;
             text-indent: 10px;
             border-radius: 5px;
+        }
+
+        a {
+            line-height: 25px;
         }
 
         button {

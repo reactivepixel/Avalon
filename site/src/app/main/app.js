@@ -29,7 +29,7 @@ var app = angular.module("app", [
         templateUrl: "content/artists.tpl.html"
     });
 		
-	$locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(false);
 
     SC.initialize({
         client_id: "4ccedb41319a68ce1daa392a3ce5ef55",
