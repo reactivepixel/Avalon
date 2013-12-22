@@ -1,13 +1,7 @@
-<h2>This is the user page.</h2>
-
 <section ng-controller="UserPageCtrl" class="user_section">
-    <h3>Your Content</h3>
     
-    <ul class="clearfix">
-        <li><a href="" ng-click="getMyStuff()">My Stuff</a></li>
-        <li class="push_right"><a href="" ng-click="template = 'content/add.tpl.html'">Add</a></li>
-    </ul>
+    <h2>Page of {{user.username}}</h2>
     
-    <div ng-include="template"></div>
+    
     
 </section>

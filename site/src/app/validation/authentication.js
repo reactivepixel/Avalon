@@ -1,6 +1,6 @@
 angular.module("authentication", [])
 
-.controller("AuthenticationCtrl", function ($scope, $rootScope) {
+.controller("AuthenticationCtrl", function ($scope, $rootScope, User, FBURL) {
     
     $scope.formTemplate = "validation/signup_form.tpl.html";
     
@@ -16,7 +16,7 @@ angular.module("authentication", [])
     
     $scope.login = function (form) {
         
-        if (form !== null) {
+        if (form) {
             if (form.email === undefined || form.email === "") {
                 alert("Invalid email.");
                 return null;
@@ -37,11 +37,49 @@ angular.module("authentication", [])
     };
     
     $scope.signup = function (form) {
-        console.log(form);
+        
+        if (form) {
+            if (form.fullName === undefined || form.fullName === "") { 
+                alert("Invalid full name.");
+                return null;
+            } else if (form.email === undefined || form.email === "") {
+                alert("Invalid email.");
+                return null;
+            } else if (form.password === undefined || form.password === "") {
+                alert("Invalid password.");
+                return null;
+            }
+            
+            $rootScope.auth.$createUser(form.email, form.password, 
+				function (error, newUser) {
+					if (!error) {
+                        User.getSingle(newUser.id);
+						createProfile(form, newUser.id);
+					} else {
+                        alert(error.code);
+                    }
+				});
+        } else {
+            alert("Please fill out form.");
+            return null;
+        }
+        
     };
     
     function clean() {
         $scope.form = null;
     }
+    
+	function createProfile(user, id) {
+		var info = {
+				username: user.fullName
+			};
+		
+		new Firebase(FBURL).child("users/"+id).set(info, function (err) {
+			if (!err) {
+				
+			}
+		});
+	}
     
 });

@@ -41,18 +41,6 @@ function SignUpCtrl ($scope, $location, $rootScope, $firebase, $firebaseAuth) {
 //		}
 //	}
 //	
-//	function createProfile(user, id) {
-//		var info = {
-//				username: user.username,
-//				firstName: user.firstName,
-//				lastName: user.lastName
-//			};
-//		
-//		new Firebase(url).child("users/"+id).set(info, function (err) {
-//			if (!err) {
-//				console.log("Success");
-//			}
-//		});
-//	}
+
 	
 }
