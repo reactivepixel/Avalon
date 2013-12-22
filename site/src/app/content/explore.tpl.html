@@ -5,6 +5,12 @@
             <input type="text" name="search" placeholder="Explore any artist..." ng-model="form.query" required />
             <button ng-click="search(form.query)">Search</button>
         </form>
+        
+        <ul class="content_list">
+            <li ng-repeat="this in contents">
+                 <div ng-bind-html="render(this.embed)"></div>
+            </li>
+        </ul>
     </div>
     
 </section>
