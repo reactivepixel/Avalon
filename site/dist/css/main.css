@@ -1,0 +1,247 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, big, cite, code,
+em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup,
+b, u, i, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, footer, header,
+menu, nav, section, audio, video, button, input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: sans-serif; }
+
+body {
+  line-height: 125%; }
+
+hr {
+  margin: 15px 0 25px 0; }
+
+button:hover {
+  cursor: pointer; }
+
+.clearfix {
+  overflow: auto; }
+
+.margin_center {
+  width: 960px;
+  margin: 0 auto; }
+
+.push_right {
+  float: right; }
+
+.push_left {
+  float: left;
+  background-color: red; }
+
+header {
+  z-index: 1000;
+  height: 50px;
+  background: black url("../assets/blacktexture.png") repeat;
+  color: white;
+  line-height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0px 1px 1px #000000; }
+  header p {
+    float: left; }
+    header p a {
+      text-decoration: underline;
+      font-weight: bold; }
+  header h1 {
+    float: left; }
+  header a {
+    color: inherit;
+    text-decoration: none; }
+  header ul {
+    float: right;
+    list-style-type: none; }
+  header li {
+    float: left; }
+    header li a {
+      display: block;
+      width: 100px;
+      text-align: center;
+      font-size: 14px; }
+    header li a:hover {
+      text-decoration: underline; }
+
+.landing_section {
+  padding: 100px 0;
+  height: 350px;
+  background-image: url("../assets/landing_bg.jpg"); }
+  .landing_section hr {
+    opacity: 0.5; }
+  .landing_section .left_column {
+    float: left;
+    width: 55%; }
+    .landing_section .left_column h3 {
+      margin-bottom: 30px; }
+    .landing_section .left_column ul {
+      color: white;
+      list-style-type: none; }
+    .landing_section .left_column li {
+      margin-bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 10px;
+      border-radius: 5px; }
+      .landing_section .left_column li a {
+        color: white;
+        font-weight: bold; }
+  .landing_section form {
+    float: right;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 35%;
+    padding: 10px 20px 30px;
+    border-radius: 10px; }
+    .landing_section form legend {
+      font-weight: bold;
+      font-size: 125%;
+      margin-bottom: 30px;
+      color: white; }
+    .landing_section form input {
+      display: block;
+      width: 100%;
+      margin: 20px 0px;
+      height: 30px;
+      font-size: 14px;
+      text-indent: 10px;
+      border-radius: 5px; }
+    .landing_section form a {
+      line-height: 25px;
+      color: white;
+      font-weight: bold; }
+    .landing_section form a:hover {
+      text-decoration: none; }
+    .landing_section form button {
+      float: right;
+      text-align: center;
+      height: 25px;
+      width: 80px;
+      line-height: 25px;
+      background: white;
+      font-size: 14px;
+      color: black;
+      border-radius: 5px;
+      font-weight: bold; }
+
+.example_section {
+  height: 400px;
+  box-shadow: 0px -2px 4px #4d4d4d;
+  padding-top: 50px;
+  background: white url("../assets/papertexture.png") repeat; }
+  .example_section .left_column {
+    width: 45%;
+    float: left; }
+    .example_section .left_column p {
+      text-indent: 1em;
+      margin-bottom: 25px; }
+  .example_section img {
+    float: right;
+    width: 35%; }
+
+.explore_section {
+  margin-top: 100px; }
+  .explore_section form input {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 30px;
+    text-indent: 1em; }
+  .explore_section form button {
+    width: 80px;
+    height: 34px;
+    text-align: center;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 10px;
+    color: white; }
+
+body {
+  background-image: url("../assets/hex_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: 80% 80%;
+  background-attachment: fixed;
+  height: 100%; }
+
+.user_section {
+  margin: 100px 0; }
+  .user_section button {
+    margin: 20px 0 40px 0;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+    color: white; }
+  .user_section .track_name {
+    width: 100%;
+    height: 25px;
+    text-indent: 1em;
+    border-radius: 5px;
+    margin: 15px 0 25px 0; }
+  .user_section form {
+    background-color: black;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color: white;
+    width: 320px;
+    padding: 20px;
+    position: relative; }
+    .user_section form .audio_player {
+      clear: both; }
+    .user_section form h3 {
+      float: left;
+      line-height: 30px; }
+    .user_section form .special_button {
+      float: right; }
+    .user_section form button {
+      color: black;
+      background-color: white;
+      margin-bottom: 0px;
+      margin-top: 0px; }
+    .user_section form .timer {
+      position: absolute;
+      bottom: 25px; }
+    .user_section form ul {
+      clear: both;
+      list-style-type: none; }
+      .user_section form ul button {
+        float: right;
+        margin-left: 20px;
+        margin-top: 0; }
+    .user_section form .audio_player {
+      margin-top: 10px; }
+    .user_section form .radio_buttons {
+      float: right;
+      line-height: 30px; }
+      .user_section form .radio_buttons input {
+        margin-left: 5px; }
+  .user_section .video_uploader .radio_buttons label {
+    margin-left: 15px; }
+  .user_section .video_uploader legend {
+    margin: 10px 0 20px 0;
+    text-indent: 1em; }
+  .user_section .video_uploader input {
+    text-indent: 1em; }
+  .user_section .video_uploader fieldset input {
+    width: 195px;
+    height: 25px;
+    border-radius: 5px; }
+  .user_section .video_uploader fieldset label {
+    line-height: 25px;
+    width: 125px;
+    display: inline-block; }
+  .user_section .video_uploader button {
+    float: right;
+    margin-top: 15px; }
+
+.content_list li {
+  margin: 30px 0; }
+
+ul {
+  list-style-type: none; }
