@@ -100,8 +100,8 @@ function AddCtrl($scope, $rootScope, FBURL) {
         return false;
     }
     
-    function getTime(ms) {
-        $scope.time = SC.Helper.millisecondsToHMS(ms);
-    }
+//    function getTime(ms) {
+//        $scope.time = SC.Helper.millisecondsToHMS(ms);
+//    }
     
 }

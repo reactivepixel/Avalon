@@ -3,9 +3,9 @@
     <div class="margin_center">
         <h2>Page of {{user.username}}</h2>
         
-        <button ng-show="!displayForm" ng-click="displayForm = true">Add New Content</button>
+        <button ng-show="!displayForm" ng-click="displayForm = true">Add New...</button>
         <button ng-show="displayForm" ng-click="displayForm = false">Hide Forms</button>
-        <form ng-controller="AddCtrl" ng-show="displayForm" class="clearfix video_uploader">
+        <form ng-controller="VideoCtrl" ng-show="displayForm" class="clearfix video_uploader">
             <h3>Add a video...</h3>
             
             <div class="radio_buttons">
@@ -28,6 +28,7 @@
             </fieldset>
         </form>
         
+<!--
         <form ng-show="displayForm" ng-controller="SoundCloudCtrl" class="clearfix">
             
             <div class="clearfix">
@@ -36,16 +37,19 @@
                 <button class="special_button" ng-show="isRecording" ng-click="stop()">Stop</button>
             </div>
             
+            <input class="track_name" type="text" ng-model="track.title" placeholder="Track Name" />
+            
             <ul class="audio_player" ng-show="hasRecorded" class="clearfix">
                 <li class="timer">Time: {{time}}</li>
                 <li ng-click="play()"><button>Play</button></li>
-                <li ng-click="add(track)"><button>Upload</button></li>
+                <li ng-click="addTrack(track)"><button>Upload</button></li>
             </ul>
         </form>
+-->
         
         <ul class="content_list">
             <li ng-repeat="this in contents">
-<!--                 <div ng-bind-html="render(this.embed)"></div>-->
+                 <div ng-bind-html="render(this.embed)"></div>
             </li>
         </ul>
         
