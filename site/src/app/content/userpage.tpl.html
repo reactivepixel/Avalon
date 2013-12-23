@@ -5,7 +5,7 @@
         
         <button ng-show="!displayForm" ng-click="displayForm = true">Add New...</button>
         <button ng-show="displayForm" ng-click="displayForm = false">Hide Forms</button>
-        <form ng-controller="VideoCtrl" ng-show="displayForm" class="clearfix video_uploader">
+        <form ng-show="displayForm" class="clearfix video_uploader">
             <h3>Add a video...</h3>
             
             <div class="radio_buttons">
@@ -29,7 +29,7 @@
         </form>
         
 <!--
-        <form ng-show="displayForm" ng-controller="SoundCloudCtrl" class="clearfix">
+        <form ng-show="displayForm" class="clearfix">
             
             <div class="clearfix">
                 <h3>Add a track...</h3>

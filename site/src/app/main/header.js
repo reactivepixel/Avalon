@@ -1,13 +1,10 @@
-function HeaderCtrl ($scope, $rootScope, $location, $firebase, FBURL, User, $firebaseAuth) {
+function HeaderCtrl ($scope, $rootScope) {
 	
+    // Log out the user when link gets clicked.
 	$scope.logOut = function () {
 		if ($rootScope.auth) {
 			$rootScope.auth.$logout();
 		}
-	};
-	
-	$scope.redirectHome = function () {
-		$location.path("/");	
 	};
 	
 }

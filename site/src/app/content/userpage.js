@@ -2,9 +2,11 @@ angular.module("userPage", ["ngSanitize"])
 
 .controller("UserPageCtrl" ,function UserPageCtrl($scope, $rootScope, $firebase, FBURL, $sce) {
     
+    // Collection for all the selected content.
+    $scope.contents = [];  
     $scope.displayForm = false;
-    $scope.contents = [];
     
+    // Add video to database.
     $scope.addVideo = function (video) {
     
         if ($scope.isRecording) {
@@ -27,6 +29,7 @@ angular.module("userPage", ["ngSanitize"])
                     url:   video.link
                 };
             fb.push(newVideo);
+            // Clean up.
             $scope.video = null;
             $scope.hasRecorded = false;
             $scope.isRecording = false;
@@ -35,17 +38,18 @@ angular.module("userPage", ["ngSanitize"])
     };
     
     
-    
+    /*
+        Attention:
+        
+        Due to recent bug where im getting Error 401:Unauthorized I shut down 
+        SoundCloud temporarily. To enable it just remove the comment tags for the 
+        .audio_uploader in userpage.tpl.html
+    */
     $scope.isRecording = false;
     $scope.hasRecorded = false;
     $scope.time = "0:00";
     
-    $scope.addTrack = function (track) {
-    
-    };
-    
-
-    
+    // Record external audio.
     $scope.record = function () {
         $scope.isRecording = true;
         $scope.hasRecorded = true;
@@ -57,6 +61,7 @@ angular.module("userPage", ["ngSanitize"])
         });
     };
     
+    // Stop audio recording.
     $scope.stop = function () {
 //        console.log("stop");
         $scope.isRecording = false;
@@ -72,6 +77,7 @@ angular.module("userPage", ["ngSanitize"])
         
 //        console.log(track.title);
     
+        // The user needs to connect to his account so he can upload the new track.
         SC.connect({
             connected: function () {
 //                console.log("Uploading...");
@@ -93,14 +99,15 @@ angular.module("userPage", ["ngSanitize"])
                             type: "soundcloud"
                         };
                     
-                    fb.push(newTrack);
+                    fb.push(newTrack);  // push new track into firebase.
                 });
             }
         });
     };
     
+    // Allow user to play the audio he has recorded.
     $scope.play = function () {
-        console.log("playing");
+//        console.log("playing");
         
         updateTimer(0);
         SC.recordPlay({
@@ -110,12 +117,14 @@ angular.module("userPage", ["ngSanitize"])
         });
     };
     
+    // Update the timer while user records or plays audio.
     function updateTimer(ms) {
         $scope.$apply(function () {
             $scope.time = SC.Helper.millisecondsToHMS(ms);   
         });
     }
     
+    // 
     function showContent() {
         $scope.contents = [];
         
@@ -138,9 +147,9 @@ angular.module("userPage", ["ngSanitize"])
             });
         });
     };
+    showContent();  // Show content as soon as page loads.
     
-    showContent();
-    
+    // Helper function that makes it possible to render iframes in angular.
     $scope.render = function (element) {
         if (element) {
             return $sce.trustAsHtml(element);
